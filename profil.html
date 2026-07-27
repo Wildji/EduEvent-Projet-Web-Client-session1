@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon espace - EduEvent</title>
+    <meta name="description" content="Gérez votre profil, vos inscriptions et vos billets sur EduEvent.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="images/EduEvent1.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="entete-principal" role="banner">
+        <div class="conteneur-header">
+            <a href="index.html" class="logo" aria-label="EduEvent - Accueil">
+                <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+            </a>
+            <nav class="nav-principale" id="navPrincipale" aria-label="Navigation principale">
+                <ul class="menu-principal">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+                <div class="menu-auth" id="menuAuth">
+                    <button type="button" class="btn btn-secondaire btn-menu" id="btnConnexionMenu">Se connecter</button>
+                    <button type="button" class="btn btn-primaire btn-menu" id="btnInscriptionMenu">S'inscrire</button>
+                </div>
+                <div class="menu-profil" id="menuProfil" style="display:none;">
+                    <a href="profil.html" class="btn-profil-menu">
+                        <span class="avatar-mini" id="avatarMini">
+                            <span class="avatar-initiales-mini" id="initialesMini">?</span>
+                        </span>
+                        <span class="profil-nom-menu" id="profilNomMenu">Utilisateur</span>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-small" id="btnDeconnexionMenu">Déconnexion</button>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-boutons" id="headerBoutons">
+                    <button type="button" class="btn btn-secondaire btn-small" id="btnConnexion">Connexion</button>
+                    <button type="button" class="btn btn-primaire btn-small" id="btnInscription">S'inscrire</button>
+                </div>
+                <a href="profil.html" class="btn-profil" id="btnProfil" style="display:none;">
+                    <span class="avatar-mini" id="avatarMiniDesktop">
+                        <span class="avatar-initiales-mini" id="initialesMiniDesktop">?</span>
+                    </span>
+                </a>
+                <button type="button" class="btn-menu-mobile" id="btnMenuMobile" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navPrincipale">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <main id="contenu-principal">
+        <section class="section espace-profil" id="zoneConnecte">
+            <div class="conteneur">
+                <div class="profil-entete">
+                    <div class="profil-avatar-zone">
+                        <div class="avatar-grand" id="avatarGrand">
+                            <img id="imgAvatar" src="" alt="Photo de profil" hidden>
+                            <span class="avatar-initiales" id="avatarInitiales">?</span>
+                            <button type="button" class="avatar-modifier" id="btnModifierAvatar" aria-label="Changer la photo de profil">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                            <input type="file" id="inputAvatar" accept="image/*" hidden>
+                        </div>
+                        <p class="avatar-aide">Cliquez sur l'icône pour changer votre photo</p>
+                    </div>
+                    <div class="profil-infos">
+                        <div class="profil-nom-edit">
+                            <h1 id="profilNomComplet">Chargement...</h1>
+                            <button type="button" class="btn-edit-nom" id="btnEditNom" aria-label="Modifier le nom">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <p class="profil-meta"><span id="profilFaculte">—</span> • <span id="profilNiveau">—</span></p>
+                        <p class="profil-email" id="profilEmail">—</p>
+                        <p class="profil-bio" id="profilBio"></p>
+                    </div>
+                    <div class="profil-actions">
+                        <button type="button" class="btn btn-outline" id="btnModifierProfil"><i class="fas fa-edit"></i> Modifier</button>
+                        <button type="button" class="btn btn-danger" id="btnDeconnexion"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+                    </div>
+                </div>
+
+                <div class="grille-stats-profil">
+                    <div class="stat-profil">
+                        <div class="stat-profil-nombre" id="statInscriptions">0</div>
+                        <div class="stat-profil-label">Inscriptions</div>
+                    </div>
+                    <div class="stat-profil">
+                        <div class="stat-profil-nombre" id="statParticipations">0</div>
+                        <div class="stat-profil-label">Participations</div>
+                    </div>
+                    <div class="stat-profil">
+                        <div class="stat-profil-nombre" id="statBillets">0</div>
+                        <div class="stat-profil-label">Billets</div>
+                    </div>
+                    <div class="stat-profil">
+                        <div class="stat-profil-nombre" id="statEvenements">0</div>
+                        <div class="stat-profil-label">À venir</div>
+                    </div>
+                </div>
+
+                <div class="onglets" role="tablist">
+                    <button type="button" class="onglet active" role="tab" aria-selected="true" data-onglet="inscriptions">Mes inscriptions</button>
+                    <button type="button" class="onglet" role="tab" aria-selected="false" data-onglet="billets">Mes billets</button>
+                    <button type="button" class="onglet" role="tab" aria-selected="false" data-onglet="parametres">Paramètres</button>
+                </div>
+
+                <div class="contenu-onglets">
+                    <div class="panneau-onglet active" id="panneau-inscriptions" role="tabpanel">
+                        <div class="liste-inscriptions" id="listeInscriptions">
+                            <p class="etat-vide-texte">Vous n'êtes inscrit à aucun événement pour le moment.</p>
+                        </div>
+                    </div>
+                    <div class="panneau-onglet" id="panneau-billets" role="tabpanel" hidden>
+                        <div class="liste-billets" id="listeBillets">
+                            <p class="etat-vide-texte">Aucun billet disponible.</p>
+                        </div>
+                    </div>
+                    <div class="panneau-onglet" id="panneau-parametres" role="tabpanel" hidden>
+                        <form class="formulaire-profil" id="formulaireParametres" novalidate>
+                            <h2>Informations personnelles</h2>
+                            <div class="grille-2">
+                                <div class="champ-formulaire">
+                                    <label for="param-prenom">Prénom</label>
+                                    <input type="text" id="param-prenom" name="prenom" required>
+                                </div>
+                                <div class="champ-formulaire">
+                                    <label for="param-nom">Nom</label>
+                                    <input type="text" id="param-nom" name="nom" required>
+                                </div>
+                            </div>
+                            <div class="champ-formulaire">
+                                <label for="param-email">Email</label>
+                                <input type="email" id="param-email" name="email" required>
+                            </div>
+                            <div class="grille-2">
+                                <div class="champ-formulaire">
+                                    <label for="param-faculte">Faculté</label>
+                                    <select id="param-faculte" name="faculte">
+                                        <option value="fsg">FSG</option>
+                                        <option value="fss">FSS</option>
+                                        <option value="fsteat">FSTEAT</option>
+                                        <option value="fshs">FSHS</option>
+                                        <option value="fase">FASE</option>
+                                    </select>
+                                </div>
+                                <div class="champ-formulaire">
+                                    <label for="param-niveau">Niveau</label>
+                                    <select id="param-niveau" name="niveau">
+                                        <option value="L1">Licence 1</option>
+                                        <option value="L2">Licence 2</option>
+                                        <option value="L3">Licence 3</option>
+                                        <option value="L4">Licence 4</option>
+                                        <option value="M1">Master 1</option>
+                                        <option value="doctorat">Doctorat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="champ-formulaire">
+                                <label for="param-bio">Bio (optionnel)</label>
+                                <textarea id="param-bio" name="bio" rows="3" maxlength="200" placeholder="Parlez-nous de vous..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primaire"><i class="fas fa-save"></i> Enregistrer les modifications</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pied-de-page" role="contentinfo">
+        <div class="conteneur">
+            <div class="grille-pied">
+                <div class="colonne-pied">
+                    <a href="index.html" class="logo logo-pied">
+                        <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                        <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+                    </a>
+                    <p class="texte-pied">La plateforme officielle du CHCL qui rassemble toute la communauté universitaire autour des événements mémorables.</p>
+                    <div class="reseaux-sociaux">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Navigation</h3>
+                    <ul class="liens-pied">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="profil.html">Mon espace</a></li>
+                    </ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Catégories</h3>
+                    <ul class="liens-pied" id="liensCategories"></ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Contact</h3>
+                    <ul class="liens-pied">
+                        <li><i class="fas fa-map-marker-alt"></i> Campus Henry Christophe de Limonade</li>
+                        <li><i class="fas fa-envelope"></i> edu.event@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +509 3322-4466</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bas-pied"><p>&copy; 2026 EduEvent - Tous droits réservés.</p></div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalConnexion" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalConnexionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalConnexionTitre">Connexion</h2>
+            <form id="formulaireConnexion" novalidate>
+                <div class="champ-formulaire">
+                    <label for="connexion-email">Email</label>
+                    <input type="email" id="connexion-email" name="email" required placeholder="votre@email.com">
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="connexion-mdp">Mot de passe</label>
+                    <input type="password" id="connexion-mdp" name="motdepasse" required minlength="6" placeholder="••••••">
+                    <span class="erreur-champ"></span>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Se connecter</button>
+                <p class="modal-basculer">Pas encore de compte ? <button type="button" class="btn-lien" id="basculerInscription">S'inscrire</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalInscription" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalInscriptionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalInscriptionTitre">Créer un compte</h2>
+            <form id="formulaireInscription" novalidate>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-prenom">Prénom</label>
+                        <input type="text" id="insc-prenom" name="prenom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-nom">Nom</label>
+                        <input type="text" id="insc-nom" name="nom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-email">Email</label>
+                    <input type="email" id="insc-email" name="email" required>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-mdp">Mot de passe</label>
+                    <input type="password" id="insc-mdp" name="motdepasse" required minlength="6">
+                    <div id="forceMdp"><div class="force-barre"></div></div>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-faculte">Faculté</label>
+                        <select id="insc-faculte" name="faculte">
+                            <option value="fsg">FSG</option>
+                            <option value="fss">FSS</option>
+                            <option value="fsteat">FSTEAT</option>
+                            <option value="fshs">FSHS</option>
+                            <option value="fase">FASE</option>
+                        </select>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-niveau">Niveau</label>
+                        <select id="insc-niveau" name="niveau">
+                            <option value="L1">Licence 1</option>
+                            <option value="L2">Licence 2</option>
+                            <option value="L3">Licence 3</option>
+                            <option value="L4">Licence 4</option>
+                            <option value="M1">Master 1</option>
+                            <option value="doctorat">Doctorat</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Créer mon compte</button>
+                <p class="modal-basculer">Déjà un compte ? <button type="button" class="btn-lien" id="basculerConnexion">Se connecter</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-conteneur" id="toastConteneur" aria-live="polite"></div>
+    <script src="js/main.js" defer></script>
+    <script src="js/profil.js" defer></script>
+    
+</body>
+</html>

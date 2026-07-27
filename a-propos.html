@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - EduEvent</title>
+    <meta name="description" content="Découvrez EduEvent, la plateforme événementielle du Campus Henry Christophe de Limonade.">
+    <link rel="canonical" href="#url_EduEvent">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="À propos - EduEvent">
+    <meta property="og:description" content="Découvrez notre mission, notre équipe et nos valeurs.">
+    <meta property="og:image" content="images/EduEvent1.svg">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" href="images/EduEvent1.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="entete-principal" role="banner">
+        <div class="conteneur-header">
+            <a href="index.html" class="logo" aria-label="EduEvent - Accueil">
+                <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+            </a>
+            <nav class="nav-principale" id="navPrincipale" aria-label="Navigation principale">
+                <ul class="menu-principal">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="a-propos.html" class="lien-actif">À propos</a></li>
+                </ul>
+                <div class="menu-auth" id="menuAuth">
+                    <button type="button" class="btn btn-secondaire btn-menu" id="btnConnexionMenu">Se connecter</button>
+                    <button type="button" class="btn btn-primaire btn-menu" id="btnInscriptionMenu">S'inscrire</button>
+                </div>
+                <div class="menu-profil" id="menuProfil" style="display:none;">
+                    <a href="profil.html" class="btn-profil-menu">
+                        <span class="avatar-mini" id="avatarMini">
+                            <span class="avatar-initiales-mini" id="initialesMini">?</span>
+                        </span>
+                        <span class="profil-nom-menu" id="profilNomMenu">Utilisateur</span>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-small" id="btnDeconnexionMenu">Déconnexion</button>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-boutons" id="headerBoutons">
+                    <button type="button" class="btn btn-secondaire btn-small" id="btnConnexion">Connexion</button>
+                    <button type="button" class="btn btn-primaire btn-small" id="btnInscription">S'inscrire</button>
+                </div>
+                <a href="profil.html" class="btn-profil" id="btnProfil" style="display:none;">
+                    <span class="avatar-mini" id="avatarMiniDesktop">
+                        <span class="avatar-initiales-mini" id="initialesMiniDesktop">?</span>
+                    </span>
+                </a>
+                <button type="button" class="btn-menu-mobile" id="btnMenuMobile" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navPrincipale">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <main id="contenu-principal">
+        <section class="entete-page hero-apropos" aria-labelledby="apropos-titre">
+            <div class="conteneur">
+                <h1 class="titre-page" id="apropos-titre">À propos d'EduEvent</h1>
+                <p class="sous-titre-page">Découvrez notre mission et notre équipe</p>
+            </div>
+        </section>
+
+        <section class="section presentation">
+            <div class="conteneur">
+                <div class="grille-2-colonnes">
+                    <div>
+                        <h2 class="titre-section">Une plateforme pensée par et pour les étudiants</h2>
+                        <p>EduEvent est née d'un constat simple : trop d'événements incroyables sur le campus passent inaperçus. Nous avons créé cette plateforme pour rassembler toute l'offre universitaire en un seul endroit, accessible à tous.</p>
+                        <h3 class="sous-titre-section present">Notre mission</h3>
+                        <p>Connecter la communauté universitaire avec les activités qui enrichissent leur expérience académique et sociale.</p>
+                        <h3 class="sous-titre-section present">Notre vision</h3>
+                        <p>Devenir la référence en matière de communication événementielle dans les universités haïtiennes.</p>
+                        <h3 class="sous-titre-section present">Nos valeurs</h3>
+                        <p><strong>Accessibilité :</strong> L'information doit être disponible pour tous.</p>
+                        <p><strong>Communauté :</strong> Renforcer les liens entre les membres de l'université.</p>
+                        <p><strong>Innovation :</strong> Utiliser les technologies modernes pour servir notre communauté.</p>
+                    </div>
+                    <div class="image-presentation">
+                        <img src="images/place_chcl.webp" alt="Place du CHCL" loading="lazy" width="400" height="300">
+                        <img src="images/chcl.webp" alt="Campus Henry Christophe de Limonade" loading="lazy" width="400" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section equipe" aria-labelledby="equipe-titre">
+            <div class="conteneur">
+                <div class="entete-section section-equipe">
+                    <h2 id="equipe-titre" class="titre-section">Notre équipe</h2>
+                    <p class="sous-titre-section">Les développeurs derrière EduEvent</p>
+                </div>
+                <div class="grille-equipe">
+                    <div class="carte-membre">
+                        <div class="membre-photo"><img src="images/marvins.png" alt="Marvins JEAN-BAPTISTE" width="200" height="200" loading="lazy"></div>
+                        <h3>Marvins JEAN-BAPTISTE</h3>
+                        <p class="membre-role">Développeur Front-End</p>
+                        <p class="membre-desc">Licence 3 — Informatique</p>
+                        <div class="membre-reseaux">
+                            <a href="mailto:jeanbaptistemarvins1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+50946043899" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="carte-membre">
+                        <div class="membre-photo"><img src="images/wjb.jpg" alt="Wilsray JEAN BAPTISTE" width="200" height="200" loading="lazy"></div>
+                        <h3>Wilsray JEAN BAPTISTE</h3>
+                        <p class="membre-role">Développeur Front-End</p>
+                        <p class="membre-desc">Licence 3 — Informatique</p>
+                        <div class="membre-reseaux">
+                            <a href="mailto:wilsrayjb@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+50942942651" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" aria-labelledby="contact-titre">
+            <div class="conteneur">
+                <div class="grille-contact">
+                    <div class="bloc-contact">
+                        <h2 id="contact-titre" class="titre-section">Une question ? Écrivez-nous !</h2>
+                        <form class="formulaire-contact" id="formulaireContact" novalidate>
+                            <div class="grille-2">
+                                <div class="champ-formulaire">
+                                    <label for="contact-nom">Nom complet</label>
+                                    <input type="text" id="contact-nom" name="nom" required minlength="2">
+                                    <span class="erreur-champ"></span>
+                                </div>
+                                <div class="champ-formulaire">
+                                    <label for="contact-email">Email</label>
+                                    <input type="email" id="contact-email" name="email" required>
+                                    <span class="erreur-champ"></span>
+                                </div>
+                            </div>
+                            <div class="champ-formulaire">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required minlength="10"></textarea>
+                                <span class="erreur-champ"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primaire"><i class="fas fa-envelope"></i> Envoyer le message</button>
+                        </form>
+                    </div>
+                    <div class="bloc-carte">
+                        <h3>Localisation</h3>
+                        <div class="carte" aria-label="Localisation du CHCL">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.343708221429!2d-72.07313712569355!3d19.655336481672123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb6ce8cee14f2f3%3A0x393e1286c52e1b74!2sUniversit%C3%A9%20d&#39;%C3%89tat%20d&#39;Ha%C3%AFti%20-%20Campus%20Henry%20Christophe%20de%20Limonade!5e0!3m2!1sfr!2sht!4v1783484073219!5m2!1sfr!2sht" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Carte du Campus Henry Christophe de Limonade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq-section" aria-labelledby="faq-titre">
+            <div class="conteneur">
+                <div class="entete-section centre">
+                    <h2 id="faq-titre" class="titre-section">Questions fréquentes</h2>
+                    <p class="sous-titre">Trouvez rapidement les réponses à vos questions</p>
+                </div>
+                <div class="faq-liste" id="faqListe">
+                    <details class="faq-item">
+                        <summary>
+                            <span class="faq-icone"><i class="fas fa-info-circle"></i></span>
+                            <span class="faq-question">Qu'est-ce qu'EduEvent ?</span>
+                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="faq-reponse"><p>EduEvent est la plateforme officielle qui rassemble tous les événements du CHCL.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span class="faq-icone"><i class="fas fa-tag"></i></span>
+                            <span class="faq-question">L'inscription est-elle gratuite ?</span>
+                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="faq-reponse"><p>La majorité des événements sont gratuits. Certains événements spéciaux peuvent être payants.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span class="faq-icone"><i class="fas fa-ticket-alt"></i></span>
+                            <span class="faq-question">Comment récupérer mon billet ?</span>
+                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="faq-reponse"><p>Votre billet est disponible dans votre espace personnel, dans l'onglet "Mes billets".</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span class="faq-icone"><i class="fas fa-times-circle"></i></span>
+                            <span class="faq-question">Puis-je annuler une inscription ?</span>
+                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="faq-reponse"><p>Oui, vous pouvez annuler une inscription depuis votre espace personnel tant que l'événement n'a pas commencé.</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pied-de-page" role="contentinfo">
+        <div class="conteneur">
+            <div class="grille-pied">
+                <div class="colonne-pied">
+                    <a href="index.html" class="logo logo-pied">
+                        <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                        <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+                    </a>
+                    <p class="texte-pied">La plateforme officielle du CHCL qui rassemble toute la communauté universitaire autour des événements mémorables.</p>
+                    <div class="reseaux-sociaux">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Navigation</h3>
+                    <ul class="liens-pied">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="profil.html">Mon espace</a></li>
+                    </ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Catégories</h3>
+                    <ul class="liens-pied" id="liensCategories"></ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Contact</h3>
+                    <ul class="liens-pied">
+                        <li><i class="fas fa-map-marker-alt"></i> Campus Henry Christophe de Limonade</li>
+                        <li><i class="fas fa-envelope"></i> edu.event@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +509 3322-4466</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bas-pied"><p>&copy; 2026 EduEvent - Tous droits réservés.</p></div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalConnexion" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalConnexionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalConnexionTitre">Connexion</h2>
+            <form id="formulaireConnexion" novalidate>
+                <div class="champ-formulaire">
+                    <label for="connexion-email">Email</label>
+                    <input type="email" id="connexion-email" name="email" required placeholder="votre@email.com">
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="connexion-mdp">Mot de passe</label>
+                    <input type="password" id="connexion-mdp" name="motdepasse" required minlength="6" placeholder="••••••">
+                    <span class="erreur-champ"></span>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Se connecter</button>
+                <p class="modal-basculer">Pas encore de compte ? <button type="button" class="btn-lien" id="basculerInscription">S'inscrire</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalInscription" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalInscriptionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalInscriptionTitre">Créer un compte</h2>
+            <form id="formulaireInscription" novalidate>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-prenom">Prénom</label>
+                        <input type="text" id="insc-prenom" name="prenom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-nom">Nom</label>
+                        <input type="text" id="insc-nom" name="nom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-email">Email</label>
+                    <input type="email" id="insc-email" name="email" required>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-mdp">Mot de passe</label>
+                    <input type="password" id="insc-mdp" name="motdepasse" required minlength="6">
+                    <div id="forceMdp"><div class="force-barre"></div></div>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-faculte">Faculté</label>
+                        <select id="insc-faculte" name="faculte">
+                            <option value="fsg">FSG</option>
+                            <option value="fss">FSS</option>
+                            <option value="fsteat">FSTEAT</option>
+                            <option value="fshs">FSHS</option>
+                            <option value="fase">FASE</option>
+                        </select>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-niveau">Niveau</label>
+                        <select id="insc-niveau" name="niveau">
+                            <option value="L1">Licence 1</option>
+                            <option value="L2">Licence 2</option>
+                            <option value="L3">Licence 3</option>
+                            <option value="L4">Licence 4</option>
+                            <option value="M1">Master 1</option>
+                            <option value="doctorat">Doctorat</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Créer mon compte</button>
+                <p class="modal-basculer">Déjà un compte ? <button type="button" class="btn-lien" id="basculerConnexion">Se connecter</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-conteneur" id="toastConteneur" aria-live="polite"></div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/evenements.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+{
+  "evenements": [
+    {
+      "id": 1,
+      "titre": "Intronisation des nouveaux étudiants",
+      "categorie": "conference",
+      "categorieLabel": "Conférence",
+      "date": "2026-03-03",
+      "heure": "14:00",
+      "lieu": "Auditorium du Campus",
+      "organisateur": "Département Informatique",
+      "image": "images/evenements/intronisation.jpg",
+      "description": "Une cérémonie d'accueil pour les nouveaux étudiants du CHCL.",
+      "descriptionLongue": "Rejoignez-nous pour une journée d'accueil et d'intégration des nouveaux étudiants.",
+      "programme": [
+        "Accueil des participants",
+        "Discours du Doyen",
+        "Visite guidée du campus",
+        "Activités de groupe"
+      ],
+      "places": 200,
+      "placesOccupees": 142,
+      "prix": 0,
+      "vedette": true
+    },
+    {
+      "id": 2,
+      "titre": "Exhausted",
+      "categorie": "culture",
+      "categorieLabel": "Culture",
+      "date": "2026-10-20",
+      "heure": "13:00",
+      "lieu": "Auditorium du Campus Henry Christophe de Limonade",
+      "organisateur": "Faculté des Sciences et de Génie",
+      "image": "images/evenements/FSG film.jpg",
+      "description": "Projection du film 'Exhausted' organisée par la FSG.",
+      "descriptionLongue": "Venez profiter d'une séance de cinéma conviviale accompagnée de pop-corn et de fresco.",
+      "programme": [
+        "Accueil des participants",
+        "Projection du film",
+        "Pause rafraîchissement (Fresco & Pop Corn)",
+        "Échanges"
+      ],
+      "places": 300,
+      "placesOccupees": 0,
+      "prix": 100,
+      "vedette": true
+    }, 
+  
+    {
+      "id": 3,
+      "titre": "Fun Vibes",
+      "categorie": "Culture",
+      "categorieLabel": "Culture",
+      "date": "2026-04-15",
+      "heure": "10:00",
+      "lieu": "Chouchou Bay",
+      "organisateur": "Team AJS",
+      "image": "images/evenements/fun vibes.png",
+      "description": "Une journée de détente et d'activités aquatiques.",
+      "descriptionLongue": "Rejoignez la Team AJS pour une journée pleine d'énergie avec DJ live, jeux aquatiques et bien plus encore.",
+      "programme": [
+        "DJ en live",
+        "Concours de plongeons",
+        "Jeux aquatiques",
+        "Photobooth fun"
+      ],
+      "places": 500,
+      "placesOccupees": 0,
+      "prix": 500,
+      "vedette": true
+    },
+    
+    {
+      "id": 4,
+      "titre": "Joy Ciné - Alad'2",
+      "categorie": "culture",
+      "categorieLabel": "Culture",
+      "date": "2026-08-23",
+      "heure": "19:00",
+      "lieu": "Sakre Salon, P53 A, Village Ekam, Caracol, Haïti",
+      "organisateur": "Sakre Salon",
+      "image": "images/evenements/Joy Ciné - film.jpg",
+      "description": "Projection du film 'Alad'2' organisée par le Joy Ciné Club.",
+      "descriptionLongue": "Une soirée cinéma immersive avec Pop Corn, Cocktails et d'autres surprises.",
+      "programme": [
+        "Accueil des cinéphiles",
+        "Projection du film Alad'2",
+        "Service de collations (Pop Corn & Cocktails)",
+        "Échanges autour du film"
+      ],
+      "places": 200,
+      "placesOccupees": 0,
+      "prix": 150,
+      "vedette": true
+    },
+    {
+      "id": 5,
+      "titre": "NumEd 1.0",
+      "categorie": "education",
+      "categorieLabel": "Éducation",
+      "date": "2026-09-04",
+      "heure": "10:00",
+      "lieu": "Auditorium du CHCL",
+      "organisateur": "Promotion Linus Torvalds, Faculté des Sciences et de Génie du CHCL",
+      "image": "images/evenements/Numed.jpg",
+      "description": "Conférence sur la citoyenneté numérique.",
+      "descriptionLongue": "Atelier thématique abordant la citoyenneté numérique sous l'angle des droits, devoirs et responsabilités des citoyens dans l'espace numérique.",
+      "programme": [
+        "Ouverture officielle",
+        "Présentation du thème",
+        "Panel de discussion",
+        "Séance de questions-réponses"
+      ],
+      "places": 350,
+      "placesOccupees": 0,
+      "prix": 0,
+      "vedette": true
+    },
+
+    {
+      "id": 6,
+      "titre": "Joy Ciné 2.0",
+      "categorie": "culture",
+      "categorieLabel": "Culture",
+      "date": "2026-08-27",
+      "heure": "18:00",
+      "lieu": "Non spécifié",
+      "organisateur": "Eliel Dorcelly",
+      "image": "images/evenements/JC2.jpg",
+      "description": "Événement culturel Joy Ciné 2.0 sous le thème 'Stay Focus'.",
+      "descriptionLongue": "Nouvelle édition du projet Joy Ciné par Eliel Dorcelly. Restez connectés pour plus d'informations.",
+      "programme": [
+        "Présentation du projet",
+        "Activités cinématographiques",
+        "Mot de fin"
+      ],
+      "places": 200,
+      "placesOccupees": 0,
+      "prix": 0,
+      "vedette": true
+    },
+
+    {
+      "id": 7,
+      "titre": "Soutenance de Projet de Fin d'Études",
+      "categorie": "soutenance",
+      "categorieLabel": "Soutenance",
+      "date": "2026-10-15",
+      "heure": "09:00",
+      "lieu": "Bibliothèque du CHCL",
+      "organisateur": "Faculté des Sciences et de Génie (FSG)",
+      "image": "images/soutenancr.jpg ",
+      "description": "Soutenance publique du projet de fin d'études par le Groupe Alpha.",
+      "descriptionLongue": "Présentation et soutenance du projet intitulé 'Développement d'une solution de mobilité intelligente' par les étudiants Jean Dupont, Marie Curie et Ahmed Ben Bella devant le jury.",
+      "programme": [
+        "Accueil du jury et du public",
+        "Présentation du projet",
+        "Questions du jury",
+        "Délibération du jury",
+        "Proclamation des résultats et pot de clôture"
+      ],
+      "places": 50,
+      "placesOccupees": 0,
+      "prix": 0,
+      "vedette": true
+    }
+  ]
+}

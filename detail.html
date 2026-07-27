@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail événement - EduEvent</title>
+    <meta name="description" content="Détails de l'événement sur EduEvent.">
+    <link rel="canonical" href="#url_EduEvent">
+    <link rel="icon" href="images/EduEvent1.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="entete-principal" role="banner">
+        <div class="conteneur-header">
+            <a href="index.html" class="logo" aria-label="EduEvent - Accueil">
+                <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+            </a>
+            <nav class="nav-principale" id="navPrincipale" aria-label="Navigation principale">
+                <ul class="menu-principal">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+                <div class="menu-auth" id="menuAuth">
+                    <button type="button" class="btn btn-secondaire btn-menu" id="btnConnexionMenu">Se connecter</button>
+                    <button type="button" class="btn btn-primaire btn-menu" id="btnInscriptionMenu">S'inscrire</button>
+                </div>
+                <div class="menu-profil" id="menuProfil" style="display:none;">
+                    <a href="profil.html" class="btn-profil-menu">
+                        <span class="avatar-mini" id="avatarMini">
+                            <span class="avatar-initiales-mini" id="initialesMini">?</span>
+                        </span>
+                        <span class="profil-nom-menu" id="profilNomMenu">Utilisateur</span>
+                    </a>
+                    <button type="button" class="btn btn-danger btn-small" id="btnDeconnexionMenu">Déconnexion</button>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-boutons" id="headerBoutons">
+                    <button type="button" class="btn btn-secondaire btn-small" id="btnConnexion">Connexion</button>
+                    <button type="button" class="btn btn-primaire btn-small" id="btnInscription">S'inscrire</button>
+                </div>
+                <a href="profil.html" class="btn-profil" id="btnProfil" style="display:none;">
+                    <span class="avatar-mini" id="avatarMiniDesktop">
+                        <span class="avatar-initiales-mini" id="initialesMiniDesktop">?</span>
+                    </span>
+                </a>
+                <button type="button" class="btn-menu-mobile" id="btnMenuMobile" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navPrincipale">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <main id="contenu-principal">
+        <section class="banniere-evenement" id="banniereEvt" aria-labelledby="detail-titre">
+            <div class="banniere-overlay"></div>
+            <div class="conteneur banniere-contenu">
+                <nav class="fil-ariane" aria-label="Fil d'Ariane">
+                    <ol>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li aria-current="page" id="ariane-titre">Événement</li>
+                    </ol>
+                </nav>
+                <span class="badge-categorie" id="badgeCategorie">Catégorie</span>
+                <h1 id="detail-titre" class="titre-banniere">Chargement...</h1>
+            </div>
+        </section>
+
+        <section class="section detail-section">
+            <div class="conteneur">
+                <div class="grille-detail">
+                    <article class="detail-principal">
+                        <div class="info-cles">
+                            <div class="info-cle">
+                                <span class="info-icone"><i class="fas fa-calendar-alt"></i></span>
+                                <div><strong>Date</strong><span id="infoDate">—</span></div>
+                            </div>
+                            <div class="info-cle">
+                                <span class="info-icone"><i class="fas fa-clock"></i></span>
+                                <div><strong>Heure</strong><span id="infoHeure">—</span></div>
+                            </div>
+                            <div class="info-cle">
+                                <span class="info-icone"><i class="fas fa-map-marker-alt"></i></span>
+                                <div><strong>Lieu</strong><span id="infoLieu">—</span></div>
+                            </div>
+                            <div class="info-cle">
+                                <span class="info-icone"><i class="fas fa-user"></i></span>
+                                <div><strong>Organisateur</strong><span id="infoOrganisateur">—</span></div>
+                            </div>
+                        </div>
+                        <div class="bloc-contenu">
+                            <h2>À propos de l'événement</h2>
+                            <div id="descriptionEvt" class="texte-description"></div>
+                        </div>
+                        <div class="bloc-contenu" id="blocProgramme">
+                            <h2>Programme</h2>
+                            <ul class="liste-programme" id="listeProgramme"></ul>
+                        </div>
+                        <div class="bloc-contenu">
+                            <h2>Commentaires</h2>
+                            <div class="liste-commentaires" id="listeCommentaires"></div>
+                            <form class="formulaire-commentaire" id="formulaireCommentaire" novalidate>
+                                <h3>Laisser un commentaire</h3>
+                                <div class="champ-formulaire">
+                                    <label for="commentaire-texte">Votre message</label>
+                                    <textarea id="commentaire-texte" name="commentaire" rows="4" required minlength="10" placeholder="Partagez votre avis..."></textarea>
+                                    <span class="erreur-champ"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primaire">Publier</button>
+                            </form>
+                        </div>
+                    </article>
+
+                    <aside class="detail-sidebar">
+                        <div class="carte-inscription">
+                            <div class="prix-evenement" id="prixEvenement"><span class="prix-montant">Gratuit</span></div>
+                            <div class="places-restantes" id="placesRestantes">
+                                <div class="places-barre"><div class="places-remplissage"></div></div>
+                                <span class="places-texte"><strong id="nombrePlaces">0</strong> places restantes</span>
+                            </div>
+                            <div class="compteur-evenement" id="compteurEvenement">
+                                <span class="compteur-label">L'événement commence dans</span>
+                                <div class="compteur-valeurs">
+                                    <div class="compteur-unite"><span id="cptJours">0</span><small>Jours</small></div>
+                                    <div class="compteur-unite"><span id="cptHeures">0</span><small>Heures</small></div>
+                                    <div class="compteur-unite"><span id="cptMinutes">0</span><small>Min</small></div>
+                                    <div class="compteur-unite"><span id="cptSecondes">0</span><small>Sec</small></div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primaire btn-block" id="btnInscrire"><i class="fas fa-ticket-alt"></i> S'inscrire</button>
+                            <button type="button" class="btn btn-contour btn-block" id="btnPartager"><i class="fas fa-share-alt"></i> Partager</button>
+                        </div>
+                        <a href="evenements.html" class="btn btn-secondaire btn-block btn-retour"><i class="fas fa-arrow-left"></i> Retour</a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pied-de-page" role="contentinfo">
+        <div class="conteneur">
+            <div class="grille-pied">
+                <div class="colonne-pied">
+                    <a href="index.html" class="logo logo-pied">
+                        <img class="logo-icon" src="images/EduEvent1.svg" alt="Logo EduEvent" width="40" height="40">
+                        <span class="logo-texte">Edu<span class="logo-accent">Event</span></span>
+                    </a>
+                    <p class="texte-pied">La plateforme officielle du CHCL qui rassemble toute la communauté universitaire autour des événements mémorables.</p>
+                    <div class="reseaux-sociaux">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Navigation</h3>
+                    <ul class="liens-pied">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="profil.html">Mon espace</a></li>
+                    </ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Catégories</h3>
+                    <ul class="liens-pied" id="liensCategories"></ul>
+                </div>
+                <div class="colonne-pied">
+                    <h3 class="titre-pied">Contact</h3>
+                    <ul class="liens-pied">
+                        <li><i class="fas fa-map-marker-alt"></i> Campus Henry Christophe de Limonade</li>
+                        <li><i class="fas fa-envelope"></i> edu.event@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +509 3322-4466</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bas-pied"><p>&copy; 2026 EduEvent - Tous droits réservés.</p></div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalConnexion" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalConnexionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalConnexionTitre">Connexion</h2>
+            <form id="formulaireConnexion" novalidate>
+                <div class="champ-formulaire">
+                    <label for="connexion-email">Email</label>
+                    <input type="email" id="connexion-email" name="email" required placeholder="votre@email.com">
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="connexion-mdp">Mot de passe</label>
+                    <input type="password" id="connexion-mdp" name="motdepasse" required minlength="6" placeholder="••••••">
+                    <span class="erreur-champ"></span>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Se connecter</button>
+                <p class="modal-basculer">Pas encore de compte ? <button type="button" class="btn-lien" id="basculerInscription">S'inscrire</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalInscription" hidden>
+        <div class="modal" role="dialog" aria-labelledby="modalInscriptionTitre" aria-modal="true">
+            <button type="button" class="modal-fermer" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <h2 id="modalInscriptionTitre">Créer un compte</h2>
+            <form id="formulaireInscription" novalidate>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-prenom">Prénom</label>
+                        <input type="text" id="insc-prenom" name="prenom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-nom">Nom</label>
+                        <input type="text" id="insc-nom" name="nom" required>
+                        <span class="erreur-champ"></span>
+                    </div>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-email">Email</label>
+                    <input type="email" id="insc-email" name="email" required>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="champ-formulaire">
+                    <label for="insc-mdp">Mot de passe</label>
+                    <input type="password" id="insc-mdp" name="motdepasse" required minlength="6">
+                    <div id="forceMdp"><div class="force-barre"></div></div>
+                    <span class="erreur-champ"></span>
+                </div>
+                <div class="grille-2">
+                    <div class="champ-formulaire">
+                        <label for="insc-faculte">Faculté</label>
+                        <select id="insc-faculte" name="faculte">
+                            <option value="fsg">FSG</option>
+                            <option value="fss">FSS</option>
+                            <option value="fsteat">FSTEAT</option>
+                            <option value="fshs">FSHS</option>
+                            <option value="fase">FASE</option>
+                        </select>
+                    </div>
+                    <div class="champ-formulaire">
+                        <label for="insc-niveau">Niveau</label>
+                        <select id="insc-niveau" name="niveau">
+                            <option value="L1">Licence 1</option>
+                            <option value="L2">Licence 2</option>
+                            <option value="L3">Licence 3</option>
+                            <option value="L4">Licence 4</option>
+                            <option value="M1">Master 1</option>
+                            <option value="doctorat">Doctorat</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primaire btn-block">Créer mon compte</button>
+                <p class="modal-basculer">Déjà un compte ? <button type="button" class="btn-lien" id="basculerConnexion">Se connecter</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast-conteneur" id="toastConteneur" aria-live="polite"></div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/evenements.js" defer></script>
+    <script src="js/detail.js" defer></script>
+</body>
+</html>

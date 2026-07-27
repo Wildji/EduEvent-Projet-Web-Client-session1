@@ -1,0 +1,62 @@
+@keyframes zoomLent {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.15); }
+}
+
+@keyframes apparitionRapide {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes agrandir {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes apparitionHaut {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glisserDroite {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animer-apparition {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animer-apparition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animer-apparition:nth-child(1) { transition-delay: 0.05s; }
+.animer-apparition:nth-child(2) { transition-delay: 0.1s; }
+.animer-apparition:nth-child(3) { transition-delay: 0.15s; }
+.animer-apparition:nth-child(4) { transition-delay: 0.2s; }
+.animer-apparition:nth-child(5) { transition-delay: 0.25s; }
+.animer-apparition:nth-child(6) { transition-delay: 0.3s; }
+
+.slide-hero.active {
+    animation: zoomLent 8s ease-in-out forwards;
+}
+
+.modal {
+    animation: agrandir 0.3s ease;
+}
+
+.modal-overlay {
+    animation: apparitionRapide 0.3s ease;
+}
+
+.toast {
+    animation: glisserDroite 0.4s ease;
+}
+
+.hero-contenu {
+    animation: apparitionHaut 1s ease-out;
+}
