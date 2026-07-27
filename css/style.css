@@ -433,10 +433,10 @@ img {
     transform: scale(1.05);
 }
 
-.slide-hero:nth-child(1) { background-image: url('./images/psycho.jpg'); }
-.slide-hero:nth-child(2) { background-image: url('./images/graduation.jpg'); }
-.slide-hero:nth-child(3) { background-image: url('./images/fan_chcl.jpg'); }
-.slide-hero:nth-child(4) { background-image: url('./images/soutenancr.jpg'); }
+.slide-hero:nth-child(1) { background-image: url('images/psycho.jpg'); }
+.slide-hero:nth-child(2) { background-image: url('images/graduation.jpg'); }
+.slide-hero:nth-child(3) { background-image: url('images/fan_chcl.jpg'); }
+.slide-hero:nth-child(4) { background-image: url('images/soutenancr.jpg'); }
 
 .slide-hero.active {
     opacity: 1;
@@ -707,7 +707,7 @@ img {
 }
 
 .carte-newsletter {
-    background: linear-gradient(135deg, var(--primaire) 30%, transparent 100%), url("./images/graduation.jpg");
+    background: linear-gradient(135deg, var(--primaire) 30%, transparent 100%), url("images/graduation.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
