@@ -465,10 +465,6 @@ img {
     margin-bottom: 1rem;
 }
 
-.texte-gradient {
-    background: linear-gradient(135deg, var(--secondaire), #00bcd4);
-}
-
 .hero-sous-titre {
     font-size: clamp(0.95rem, 2.5vw, 1.2rem);
     color: var(--blanc);
