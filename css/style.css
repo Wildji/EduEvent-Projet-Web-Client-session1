@@ -721,7 +721,7 @@ img {
 }
 
 .carte-newsletter {
-    background: linear-gradient(135deg, var(--primaire) 30%, transparent 100%), url("/images/graduation.jpg");
+    background: linear-gradient(135deg, var(--primaire) 30%, transparent 100%), url("images/graduation.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
